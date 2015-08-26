@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 //[AddComponentMenu("Camera-Control/Mouse drag Orbit with zoom")]
 public class MouseOrbitCamera : MonoBehaviour
 {
     public Transform target;
-    public float distance = 5.0f;
-    public float xSpeed = 120.0f;
-    public float ySpeed = 120.0f;
+    public float distance = 15.0f;
+    public float xSpeed = 20.0f;
+    public float ySpeed = 20.0f;
 
-    public float smoothTime = 2f;
+    public float smoothTime = 1f;
+
+    public Component LabelToHide;
 
     float rotationYAxis;
     float rotationXAxis;
@@ -37,6 +40,8 @@ public class MouseOrbitCamera : MonoBehaviour
         {
             velocityX += xSpeed * Input.GetAxis("Mouse X") * 0.02f;
             velocityY += ySpeed * Input.GetAxis("Mouse Y") * 0.02f;
+
+            LabelToHide.GetComponent<Text>().color = new Color(0, 0, 0, 0);
         }
 
         rotationYAxis += velocityX;
