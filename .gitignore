@@ -13,8 +13,11 @@
 /*.pidb
 /*.booproj
 
-#Unity3D Generated File On Crash Reports
+# Unity3D Generated File On Crash Reports
 sysinfo.txt
+
+# Visual Studio
+/.vs/
 
 # =========================
 # Operating System Files
